@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO & Page Title -->
+  <title>MV Engineering | Software you can build a business on</title>
+  <meta name="description" content="We architect and build high-performance, scalable software for companies that are serious about growth. Future-proof system architecture, AI, and API integrations.">
+  <meta name="keywords" content="software engineering, full-stack development, scalable software, system architecture, API integration, AI solutions, web platforms, MV Engineering">
+  <link rel="canonical" href="https://max-villafranca.dev/"> 
+  <!-- Favicon (SVG embedded as a Data URI - no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496.6 262.6'%3E%3Cpath d='M41.8 91.3a33.8 33.8 0 0 0-26.2 11c-6.2 7-9.5 17-9.5 28.8 0 28.4 12.8 53.4 12.8 91.6 0 38.2-12.8 63-12.8 91.9 0 13.6 3.5 23.5 9.3 29.9a29.5 29.5 0 0 0 22.8 9.5c9.4 0 17.5-3 23.4-9.5a43.7 43.7 0 0 0 9.4-30c0-25.8-10.3-48.9-12.5-81.2-.3-4 0-7.2 1-9.5 1-2.2 2.6-3.5 4.7-3.5 2.9 0 6.6 2.7 10 8.3a212.8 212.8 0 0 1 31.1 82.2c2.4 15.4 6 26.2 11.1 33.1 5.2 7 12 10 21 10a26 26 0 0 0 22-10c5.4-7 9-17.7 10.8-33a204.6 204.6 0 0 1 29.4-86.3c3.3-5.2 7-8 10.3-8 2 0 3.9 1.3 5 3.6 1.3 2.2 2 5.5 1.7 9.8-1.4 34.2-12.8 57.6-12.8 84.6a44 44 0 0 0 9.3 29.9A29.5 29.5 0 0 0 236 354c9.4 0 17.6-3 23.4-9.5 5.9-6.5 9.4-16.3 9.4-30 0-28.7-12.8-53.6-12.8-91.8 0-38.2 12.8-63.2 12.8-91.6 0-11.4-3.4-21.4-9.6-28.4a33.5 33.5 0 0 0-26.1-11.4c-15 0-26.4 6.2-35.2 16a108.5 108.5 0 0 0-20 38.2c-9.9 29.3-13.9 63-21.3 80.3-3.6 8.3-7 14.8-10.4 19.3-3.4 4.5-6.8 7-10.5 7-3.4 0-6.7-2.2-10.1-6.8a90.2 90.2 0 0 1-10.6-20.6c-7-18-10.2-51.3-19.2-80.2a102.5 102.5 0 0 0-19-37.4 44.5 44.5 0 0 0-34.9-15.8Zm289.6 0c-9.4 0-17.5 3.1-23.4 9.6-5.8 6.5-9.4 16.4-9.4 30.2 0 28.4 15.3 58 34.7 91.3 22 38 35.3 63 35.3 88.5 0 15.5 3.5 26.3 9.3 33.1a28 28 0 0 0 22.7 10c9.5 0 17.6-3 23.5-10 5.8-6.8 9.4-17.6 9.4-33 0-25.6 14.3-53.8 34.4-88.6 21.3-36.6 34.8-62.9 34.8-91.3 0-13.8-3.6-23.8-9.3-30.2a29.4 29.4 0 0 0-22.8-9.6c-9.4 0-17.6 3.1-23.4 9.6-5.9 6.5-9.4 16.4-9.4 30.2 0 28.5 9.1 53.6-10.7 94.7-4 8.1-8.2 14.5-12.4 18.8-4.3 4.4-8.8 6.8-13.3 6.8-4.4 0-8.8-2.2-13.3-6.6-4.4-4.4-9-11-13.5-20-19.2-38.7-11-65.2-11-93.7 0-13.8-3.6-23.8-9.4-30.2a29.4 29.4 0 0 0-22.8-9.6z' fill='%23818cf8' transform='translate(-6 -91.3)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Social Media Sharing Cards (Open Graph & Twitter) -->
+  <meta property="og:title" content="MV Engineering | Software you can build a business on">
+  <meta property="og:description" content="We architect and build high-performance, scalable software for companies that are serious about growth.">
+  <meta property="og:image" content="https://max-villafranca.dev/social-card.png">
+  <meta property="og:url" content="https://max-villafranca.dev/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles & Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Manrope', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      overflow-x: hidden; 
+    }
+    .spline-container { 
+      position: absolute; 
+      inset: 0; 
+      width: 100%; 
+      height: 100vh; 
+      z-index: -1; 
+    }
+    .content { 
+      position: relative; 
+      z-index: 10; 
+    }
+  </style>
+</head>
+<body class="font-light text-white bg-black">
+  <!-- Spline Background -->
+  <div class="spline-container">
+    <!-- CORRECTED: This now points to the working Spline animation URL -->
+    <iframe src="https://my.spline.design/retrofuturismbganimation-Lb3VtL1bNaYUnirKNzn0FvaW/" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Header / Logo -->
+  <header class="content absolute left-0 top-0 flex w-full max-w-none items-center pt-6 pl-6 z-20">
+    <!-- SVG Logo for "MV" -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto mr-2 select-none" viewBox="0 0 496.6 262.6">
+        <path d="M41.8 91.3a33.8 33.8 0 0 0-26.2 11c-6.2 7-9.5 17-9.5 28.8 0 28.4 12.8 53.4 12.8 91.6 0 38.2-12.8 63-12.8 91.9 0 13.6 3.5 23.5 9.3 29.9a29.5 29.5 0 0 0 22.8 9.5c9.4 0 17.5-3 23.4-9.5a43.7 43.7 0 0 0 9.4-30c0-25.8-10.3-48.9-12.5-81.2-.3-4 0-7.2 1-9.5 1-2.2 2.6-3.5 4.7-3.5 2.9 0 6.6 2.7 10 8.3a212.8 212.8 0 0 1 31.1 82.2c2.4 15.4 6 26.2 11.1 33.1 5.2 7 12 10 21 10a26 26 0 0 0 22-10c5.4-7 9-17.7 10.8-33a204.6 204.6 0 0 1 29.4-86.3c3.3-5.2 7-8 10.3-8 2 0 3.9 1.3 5 3.6 1.3 2.2 2 5.5 1.7 9.8-1.4 34.2-12.8 57.6-12.8 84.6a44 44 0 0 0 9.3 29.9A29.5 29.5 0 0 0 236 354c9.4 0 17.6-3 23.4-9.5 5.9-6.5 9.4-16.3 9.4-30 0-28.7-12.8-53.6-12.8-91.8 0-38.2 12.8-63.2 12.8-91.6 0-11.4-3.4-21.4-9.6-28.4a33.5 33.5 0 0 0-26.1-11.4c-15 0-26.4 6.2-35.2 16a108.5 108.5 0 0 0-20 38.2c-9.9 29.3-13.9 63-21.3 80.3-3.6 8.3-7 14.8-10.4 19.3-3.4 4.5-6.8 7-10.5 7-3.4 0-6.7-2.2-10.1-6.8a90.2 90.2 0 0 1-10.6-20.6c-7-18-10.2-51.3-19.2-80.2a102.5 102.5 0 0 0-19-37.4 44.5 44.5 0 0 0-34.9-15.8Zm289.6 0c-9.4 0-17.5 3.1-23.4 9.6-5.8 6.5-9.4 16.4-9.4 30.2 0 28.4 15.3 58 34.7 91.3 22 38 35.3 63 35.3 88.5 0 15.5 3.5 26.3 9.3 33.1a28 28 0 0 0 22.7 10c9.5 0 17.6-3 23.5-10 5.8-6.8 9.4-17.6 9.4-33 0-25.6 14.3-53.8 34.4-88.6 21.3-36.6 34.8-62.9 34.8-91.3 0-13.8-3.6-23.8-9.3-30.2a29.4 29.4 0 0 0-22.8-9.6c-9.4 0-17.6 3.1-23.4 9.6-5.9 6.5-9.4 16.4-9.4 30.2 0 28.5 9.1 53.6-10.7 94.7-4 8.1-8.2 14.5-12.4 18.8-4.3 4.4-8.8 6.8-13.3 6.8-4.4 0-8.8-2.2-13.3-6.6-4.4-4.4-9-11-13.5-20-19.2-38.7-11-65.2-11-93.7 0-13.8-3.6-23.8-9.4-30.2a29.4 29.4 0 0 0-22.8-9.6z" fill="#818cf8" transform="translate(-6 -91.3)"/>
+    </svg>
+    <span class="select-none text-2xl font-light tracking-tighter text-purple-400">Engineering</span>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="content container md:py-32 mr-auto ml-auto pt-32 pr-6 pb-16 pl-6">
+      <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter leading-tight mb-6">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">Software</span>
+          you can build a business on.
+        </h1>
+        <p class="text-gray-300 text-xl md:text-2xl max-w-2xl mx-auto font-extralight tracking-wide mb-10">
+          We architect and build high-performance, scalable software for companies that are serious about growth. Your technical challenges are our specialty.
+        </p>
+      </div>
+
+      <div id="services" class="h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent my-24"></div>
+
+      <!-- Services -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-2xl font-light tracking-tight mb-1">Platforms that Convert & Retain</p>
+          <p class="text-gray-400 font-extralight">We build blazing-fast websites and apps that provide a flawless user experience, turning visitors into loyal customers.</p>
+        </div>
+        <div>
+          <p class="text-2xl font-light tracking-tight mb-1">Future-Proof System Architecture</p>
+          <p class="text-gray-400 font-extralight">We replace fragile legacy code and design resilient backend systems built for maintainability, performance, and immense scale.</p>
+        </div>
+        <div>
+          <p class="text-2xl font-light tracking-tight mb-1">Intelligent API & Data Integration</p>
+          <p class="text-gray-400 font-extralight">We engineer clean, well-documented APIs and data pipelines that unify your tech stack and enable powerful, seamless functionality.</p>
+        </div>
+        <div>
+          <p class="text-2xl font-light tracking-tight mb-1">AI-Driven Product Intelligence</p>
+          <p class="text-gray-400 font-extralight">We go beyond the hype, implementing practical AI models to create smart, data-driven features that solve complex, real-world problems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+<section id="contact" class="content container mx-auto px-6 pt-10 pb-24">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl tracking-tight font-light mb-4">Start a project</h2>
+    <p class="text-gray-300 font-extralight mb-10">Tell us about your technical challenges and we’ll get back within 24 hours.</p>
+  </div>
+
+  <!-- Give the form an ID -->
+  <form id="contact-form" class="max-w-xl mx-auto space-y-6">
+    <div>
+      <label class="block text-sm mb-2" for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your full name" required class="w-full bg-transparent border border-white/10 rounded-md px-4 py-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-0 outline-none transition-colors">
+    </div>
+    <div>
+      <label class="block text-sm mb-2" for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@company.com" required class="w-full bg-transparent border border-white/10 rounded-md px-4 py-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-0 outline-none transition-colors">
+    </div>
+    <div>
+      <label class="block text-sm mb-2" for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="What can we help you create?" required class="w-full bg-transparent border border-white/10 rounded-md px-4 py-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-0 outline-none transition-colors"></textarea>
+    </div>
+    <!-- Give the button an ID -->
+    <button id="submit-button" type="submit" class="flex items-center justify-center gap-2 bg-white text-black font-light rounded-md px-6 py-3 w-full sm:w-auto hover:bg-opacity-90 transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" stroke-width="1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M22 2 11 13"></path><path d="m22 2-7 20-4-9-9-4 20-7Z"></path>
+      </svg>
+      Send Message
+    </button>
+  </form>
+</section>
+
+  <div class="content h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+
+<footer class="content text-xs text-gray-500 pt-8 pb-8 text-center">
+<a href="tel:+17139128660" class="inline-flex items-center gap-2 text-lg font-light mb-4 
+   text-indigo-400
+   hover:text-white
+   transition-colors 
+   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-indigo-500 rounded-md">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+  </svg>
+  (713) 912 8660
+</a>
+<br>
+  © <span id="year"></span> All rights reserved.
+</footer>
+
+<!-- SCRIPT FOR FORM SUBMISSION -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submit-button');
+    const originalButtonHtml = submitButton.innerHTML;
+    
+    // Your n8n Production URL is now plugged in.
+    const workerUrl = 'https://n8n.max-villafranca.dev/webhook/4ba494af-19c6-4290-9a91-477bdfea761f'; 
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Stop the form from submitting the traditional way
+
+        // Show a loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending...';
+
+        // The name attributes on the input fields are used here
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch(workerUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                submitButton.innerHTML = 'Message Sent!';
+                form.reset(); // Clear the form
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonHtml;
+                }, 3000);
+            } else {
+                throw new Error('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error(error);
+            submitButton.innerHTML = 'Error! Try Again.';
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonHtml;
+            }, 3000);
+        }
+    });
+</script>
+</body>
+</html>
