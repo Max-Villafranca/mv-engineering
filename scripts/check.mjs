@@ -1,0 +1,50 @@
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync, statSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const files = ['index.html','construction-digital-services/index.html','virtual-assistance/index.html','software/index.html','privacy/index.html','404.html'];
+const titles = new Set();
+let links = 0;
+for (const file of files) {
+  const html = readFileSync(join(root,file),'utf8');
+  assert.equal((html.match(/<h1[> ]/g)||[]).length,1, `${file}: exactly one h1`);
+  const title = html.match(/<title>(.*?)<\/title>/)[1];
+  assert(!titles.has(title), `${file}: unique title`); titles.add(title);
+  assert(/<meta name="description" content=".{40,}"/.test(html), `${file}: description`);
+  assert(/rel="canonical" href="https:\/\/mvengineering\.dev\//.test(html), `${file}: canonical`);
+  assert(!/1406|spline|cdn\.tailwindcss|<iframe|<canvas|fonts\.googleapis/.test(html), `${file}: no legacy phone or heavy resources`);
+  assert(html.includes('tel:+19454031403'), `${file}: correct contact number`);
+  const structured = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+  assert(structured.some(x=>x['@type']==='Organization' && x.telephone==='+19454031403'));
+  assert(structured.some(x=>x['@type']==='WebPage'));
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
+  assert.equal(new Set(ids).size,ids.length,`${file}: unique element IDs`);
+  for (const [, url] of html.matchAll(/(?:href|src)="([^" ]+)"/g)) {
+    if (!url.startsWith('/') && !url.startsWith('#')) continue;
+    const [path, hash] = url.split('#');
+    let target = path ? path.slice(1) : file;
+    if (path === '/') target = 'index.html';
+    else if (path && path.endsWith('/')) target += 'index.html';
+    assert(existsSync(join(root,target)), `${file}: broken internal resource ${url}`);
+    if (hash) assert(readFileSync(join(root,target),'utf8').includes(`id="${hash}"`),`${file}: missing anchor ${url}`);
+    links++;
+  }
+  const scripts = [...html.matchAll(/<script src="([^"]+)"/g)];
+  assert.equal(scripts.length,1,`${file}: one behavior script`);
+  assert(statSync(join(root,file)).size < 24000, `${file}: HTML budget`);
+}
+const assets = ['assets/site.css','assets/site.js','assets/logo.svg','assets/glass.svg','assets/manrope-latin.woff2'];
+const home = readFileSync(join(root,'index.html'),'utf8');
+const serviceOptions = home.match(/<select id="service".*?<\/select>/s)[0];
+assert.equal((serviceOptions.match(/<option[ >]/g)||[]).length,6,'all six service choices are options');
+const sharedBytes = assets.reduce((sum,file)=>sum+statSync(join(root,file)).size,0);
+assert(sharedBytes < 50000,'shared assets under 50 KB');
+assert(statSync(join(root,'assets/site.js')).size < 4000,'JavaScript under 4 KB');
+assert(existsSync(join(root,'social-card.png')),'social image exists');
+assert(readFileSync(join(root,'CNAME'),'utf8').trim()==='mvengineering.dev','existing domain preserved');
+assert(readFileSync(join(root,'robots.txt'),'utf8').includes('Allow: /'),'crawlable');
+const sitemap = readFileSync(join(root,'sitemap.xml'),'utf8');
+assert.equal((sitemap.match(/<loc>/g)||[]).length,5,'all indexable pages in sitemap');
+assert(!sitemap.includes('404.html'),'404 excluded from sitemap');
+console.log(`Passed: ${files.length} pages, ${links} internal resources and anchors, metadata, structured data, phone, sitemap, and performance budgets. Shared assets: ${(sharedBytes/1024).toFixed(1)} KB.`);
